@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import RSVPForm from "./components/RSVPForm";
 import Image from "next/image";
+import { EventDetails } from "./components/EventDetails";
 
 export default function Home() {
   useEffect(() => {
@@ -26,15 +27,15 @@ export default function Home() {
         />
 
         {/* Grid Container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-4xl bg-white rounded-lg overflow-hidden shadow-lg h-[80vh] md:h-[80vh] overflow-y-auto md:overflow-y-visible z-10 mx-4 md:mx-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full md:max-w-[60vw] bg-white rounded-lg overflow-hidden  h-[80vh] md:h-[80vh] overflow-y-auto md:overflow-y-visible z-10 mx-4 md:mx-0">
           {/* Left Section */}
           <div className="flex justify-center items-center flex-col p-4 md:p-8 relative bg-[#C4ABD5] bg-opacity-50">
             {/* Overlay Text */}
-            <div className="relative text-[#84456E]">
+            <div className="relative text-[#84456E] p-6 md:p-0">
               <h1 className="text-3xl md:text-4xl font-bold font-heading">
                 Nicole and Mike&apos;s Party
               </h1>
-              <p className="mt-4 text-base md:text-lg mx-auto text-body">
+              <p className="mt-4 text-base md:text-lg mx-auto text-body mt-12">
                 Hi Everyone! Mike & Nicole eloped last July, and now it is time
                 to throw a party! You are cordially invited to join us for a
                 celebration of love with friends and family. All you need to do
@@ -51,28 +52,11 @@ export default function Home() {
           {/* Right Section */}
           <div className="flex justify-center items-center flex-col p-4 md:p-8">
             {/* Event Details with Visual Enhancements */}
-            <div className="w-full">
-              <div className="bg-white p-4 md:p-8 rounded-lg shadow-lg">
-                <h2 className="text-xl md:text-2xl font-bold text-[#C4ABD5]700 mb-4 md:mb-6 font-heading">
-                  Event Details
-                </h2>
-                <p className="mt-2 md:mt-4 text-base md:text-lg">
-                  <strong>Date:</strong> Saturday, July 19th, 2025
-                  <br />
-                  <strong>Time:</strong> 6:00 PM - 12:00 AM
-                  <br />
-                  <strong>Location:</strong> Denver Botanic Gardens, 1007 York
-                  Street, Denver, CO 80206
-                  <br />
-                  <strong>Attire:</strong> Summer Garden Party
-                </p>
-              </div>
-            </div>
+            <EventDetails />
 
             {/* RSVP Form */}
-            <div className="w-full mt-4 md:mt-8">
-              <RSVPForm />
-            </div>
+
+            <RSVPForm />
           </div>
         </div>
       </section>

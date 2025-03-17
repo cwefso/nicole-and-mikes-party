@@ -33,8 +33,9 @@ const RSVPForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-md mx-auto mt-8 p-6 rounded-lg"
+      className="w-full mx-auto mt-8 p-6 rounded-lg"
     >
+      <h1 className="text-3xl md:text-4xl font-bold font-heading mb-6">RSVP</h1>
       {/* Names Field */}
       <label className="block mb-4">
         <span className="text-[#C4ABD5]700 font-semibold">Names:</span>
