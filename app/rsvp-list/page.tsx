@@ -15,6 +15,9 @@ export default async function RsvpListPage() {
     return <div>Error loading RSVPs. Please try again later.</div>;
   }
 
+  // Calculate the total number of guests
+  const totalGuests = rsvps.reduce((sum, rsvp) => sum + rsvp.num_guests, 0);
+
   return (
     <div className="min-h-screen bg-purple-50 p-8">
       <h1 className="text-4xl font-bold text-[#9D67C3] mb-8">RSVP List</h1>
@@ -33,9 +36,7 @@ export default async function RsvpListPage() {
               <th className="px-6 py-3 text-left text-sm font-bold uppercase">
                 Notes
               </th>
-              <th className="px-6 py-3 text-left text-sm font-bold uppercase">
-                Submitted On
-              </th>
+              <th>Email</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-purple-200">
@@ -49,11 +50,16 @@ export default async function RsvpListPage() {
                 <td className="px-6 py-4 text-[#9D67C3]">
                   {rsvp.notes || "-"}
                 </td>
-                <td className="px-6 py-4 text-[#9D67C3]">
-                  {new Date(rsvp.created_at).toLocaleDateString()}
-                </td>
+                <td className="px-6 py-4 text-[#9D67C3]">{rsvp.email}</td>
               </tr>
             ))}
+            {/* Total Guests Row */}
+            <tr className="bg-purple-100 font-semibold">
+              <td className="px-6 py-4 text-[#9D67C3]">Total Guests</td>
+              <td className="px-6 py-4 text-[#9D67C3]">{totalGuests}</td>
+              <td className="px-6 py-4 text-[#9D67C3]"></td>
+              <td className="px-6 py-4 text-[#9D67C3]"></td>
+            </tr>
           </tbody>
         </table>
       </div>

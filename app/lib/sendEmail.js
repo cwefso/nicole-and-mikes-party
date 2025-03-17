@@ -6,14 +6,14 @@ const transporter = nodemailer.createTransport({
   port: 465, // Secure port for SSL
   secure: true, // Use SSL
   auth: {
-    user: process.env.EMAIL_USER, // Your Gmail address
-    pass: process.env.EMAIL_PASSWORD, // Your App Password
+    user: process.env.NEXT_PUBLIC_EMAIL_USER, // Your Gmail address
+    pass: process.env.NEXT_PUBLIC_EMAIL_PASSWORD, // Your App Password
   },
 });
 
 // Debugging: Log environment variables to ensure they're loaded correctly
-console.log('Email User:', process.env.EMAIL_USER);
-console.log('Email Password:', process.env.EMAIL_PASSWORD ? '***' : 'Not set'); // Mask password for security
+console.log('Email User:', process.env.NEXT_PUBLIC_EMAIL_USER);
+console.log('Email Password:', process.env.NEXT_PUBLIC_EMAIL_PASSWORD ? '***' : 'Not set'); // Mask password for security
 
 /**
  * Sends an email with RSVP details.
@@ -28,13 +28,15 @@ export const sendEmail = async (rsvpData) => {
 
   // Define email options
   const mailOptions = {
-    from: process.env.EMAIL_USER, // Sender email
-    to: process.env.EMAIL_RECIPIENT, // Recipient email
+    from: process.env.NEXT_PUBLIC_EMAIL_USER, // Sender email
+    to: process.env.NEXT_PUBLIC_EMAIL_USER, // Recipient email
     subject: 'New RSVP Received',
     text: `New RSVP Details:
            Names: ${rsvpData.names}
            Guests: ${rsvpData.num_guests}
-           Notes: ${rsvpData.notes || 'No notes provided'}`,
+           Notes: ${rsvpData.notes || 'No notes provided'}
+           Email: ${rsvpData.email}
+           `,    
   };
 
   try {

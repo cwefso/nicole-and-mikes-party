@@ -8,12 +8,13 @@ const RSVPForm = () => {
   const [numGuests, setNumGuests] = useState(1);
   const [notes, setNotes] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [email, setEmail] = useState("")
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { error } = await supabase
       .from("rsvps")
-      .insert([{ names, num_guests: numGuests, notes }]);
+      .insert([{ names, num_guests: numGuests, notes, email }]);
 
     if (error) {
       console.error("Error submitting RSVP:", error);
@@ -68,6 +69,16 @@ const RSVPForm = () => {
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
           placeholder="Please include any dietary restrictions, accommodations, or questions here."
+          className="mt-1 block w-full px-3 py-2 border border-purple-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+        />
+      </label>
+
+      {/* Notes Field */}
+      <label className="block mb-4">
+        <span className="text-[#C4ABD5]700 font-semibold">Email</span>
+        <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           className="mt-1 block w-full px-3 py-2 border border-purple-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
         />
       </label>
