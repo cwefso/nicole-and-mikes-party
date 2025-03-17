@@ -35,7 +35,7 @@ export default function Home() {
               <h1 className="text-3xl md:text-4xl font-bold font-heading">
                 Nicole and Mike&apos;s Party
               </h1>
-              <p className="mt-4 text-base md:text-lg mx-auto text-body mt-12">
+              <p className="text-base md:text-lg mx-auto text-body mt-12">
                 Hi Everyone! Mike & Nicole eloped last July, and now it is time
                 to throw a party! You are cordially invited to join us for a
                 celebration of love with friends and family. All you need to do
