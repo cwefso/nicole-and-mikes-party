@@ -12,6 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        heading: ["Playfair Display", "serif"],
+        body: ["Lora", "serif"],
+      },
     },
   },
   plugins: [],

@@ -1,100 +1,90 @@
-import Image from "next/image";
+"use client";
+
+import { useEffect } from "react";
+import RSVPForm from "./components/RSVPForm";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  useEffect(() => {
+    // Start the listener when the page loads
+    fetch("/api/listen");
+  }, []);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="min-h-screen text-[#9D67C3] text-center">
+      {/* Header with Layered Design */}
+      <section className="flex justify-center items-center h-[100vh] relative">
+        {/* Background Image */}
+        <img
+          src="https://www.almanac.com/sites/default/files/users/Robin%20Sweetser/pansy-327188_1280.jpg"
+          alt="Footer Background"
+          className="absolute inset-0 w-full h-full object-cover opacity-50"
+        />
+
+        {/* Grid Container */}
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-4xl bg-white rounded-lg overflow-hidden shadow-lg h-[80vh] md:h-[80vh] overflow-y-auto md:overflow-y-visible z-10 mx-4 md:mx-0">
+          {/* Left Section */}
+          <div className="flex justify-center items-center flex-col p-4 md:p-8 relative bg-[#C4ABD5] bg-opacity-50">
+            {/* Overlay Text */}
+            <div className="relative text-[#84456E]">
+              <h1 className="text-3xl md:text-4xl font-bold font-heading">
+                Mike & Nicole&apos;s Party
+              </h1>
+              <p className="mt-4 text-base md:text-lg mx-auto text-body">
+                Hi Everyone! Mike & Nicole eloped last July, and now it is time
+                to throw a party! You are cordially invited to join us for a
+                celebration of love with friends and family. All you need to do
+                is arrive, eat, drink, and make merry. Admission to the Botanic
+                Gardens is included with your invite, so you can always wander
+                off and enjoy the flowers if you get bored with us! Please RSVP
+                by June 19th, 2025, and please list any dietary or accommodation
+                needs. We will send out updates with more info as we get closer
+                to the day.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Section */}
+          <div className="flex justify-center items-center flex-col p-4 md:p-8">
+            {/* Event Details with Visual Enhancements */}
+            <div className="w-full">
+              <div className="bg-white p-4 md:p-8 rounded-lg shadow-lg">
+                <h2 className="text-xl md:text-2xl font-bold text-[#C4ABD5]700 mb-4 md:mb-6 font-heading">
+                  Event Details
+                </h2>
+                <p className="mt-2 md:mt-4 text-base md:text-lg">
+                  <strong>Date:</strong> Saturday, July 19th, 2025
+                  <br />
+                  <strong>Time:</strong> 6:00 PM - 12:00 AM
+                  <br />
+                  <strong>Location:</strong> Denver Botanic Gardens, 1007 York
+                  Street, Denver, CO 80206
+                  <br />
+                  <strong>Attire:</strong> Summer Garden Party
+                </p>
+              </div>
+            </div>
+
+            {/* RSVP Form */}
+            <div className="w-full mt-4 md:mt-8">
+              <RSVPForm />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* Footer with Layered Design */}
+      <footer className="fixed bottom-0 w-full text-white py-2 md:py-4">
+        <div className="relative z-10">
+          <p className="text-sm md:text-base">
+            Questions?{" "}
+            <a
+              href="mailto:nicoleandmikesparty@gmail.com"
+              className="text-[#FBE46C] underline"
+            >
+              Email Us
+            </a>
+          </p>
+        </div>
       </footer>
     </div>
   );
