@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import RSVPForm from "./components/RSVPForm";
+import Image from "next/image";
 
 export default function Home() {
   useEffect(() => {
@@ -14,10 +15,14 @@ export default function Home() {
       {/* Header with Layered Design */}
       <section className="flex justify-center items-center h-[100vh] relative">
         {/* Background Image */}
-        <img
-          src="https://www.almanac.com/sites/default/files/users/Robin%20Sweetser/pansy-327188_1280.jpg"
+        <Image
+          src="/pansy.jpg"
           alt="Footer Background"
           className="absolute inset-0 w-full h-full object-cover opacity-50"
+          fill
+          style={{ objectFit: "cover" }}
+          quality={75}
+          priority
         />
 
         {/* Grid Container */}
@@ -27,7 +32,7 @@ export default function Home() {
             {/* Overlay Text */}
             <div className="relative text-[#84456E]">
               <h1 className="text-3xl md:text-4xl font-bold font-heading">
-                Mike & Nicole&apos;s Party
+                Nicole and Mike&apos;s Party
               </h1>
               <p className="mt-4 text-base md:text-lg mx-auto text-body">
                 Hi Everyone! Mike & Nicole eloped last July, and now it is time
