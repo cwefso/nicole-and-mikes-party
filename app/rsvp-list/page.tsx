@@ -45,20 +45,18 @@ export default async function RsvpListPage() {
                 key={rsvp.id}
                 className="hover:bg-purple-50 transition-colors"
               >
-                <td className="px-6 py-4 text-[#9D67C3]">{rsvp.names}</td>
-                <td className="px-6 py-4 text-[#9D67C3]">{rsvp.num_guests}</td>
-                <td className="px-6 py-4 text-[#9D67C3]">
-                  {rsvp.notes || "-"}
-                </td>
-                <td className="px-6 py-4 text-[#9D67C3]">{rsvp.email}</td>
+                <td className="px-6 py-4 ">{rsvp.names}</td>
+                <td className="px-6 py-4 ">{rsvp.num_guests}</td>
+                <td className="px-6 py-4 ">{rsvp.notes || "-"}</td>
+                <td className="px-6 py-4 ">{rsvp.email}</td>
               </tr>
             ))}
             {/* Total Guests Row */}
             <tr className="bg-purple-100 font-semibold">
-              <td className="px-6 py-4 text-[#9D67C3]">Total Guests</td>
-              <td className="px-6 py-4 text-[#9D67C3]">{totalGuests}</td>
-              <td className="px-6 py-4 text-[#9D67C3]"></td>
-              <td className="px-6 py-4 text-[#9D67C3]"></td>
+              <td className="px-6 py-4 ">Total Guests</td>
+              <td className="px-6 py-4 ">{totalGuests}</td>
+              <td className="px-6 py-4 "></td>
+              <td className="px-6 py-4 "></td>
             </tr>
           </tbody>
         </table>
