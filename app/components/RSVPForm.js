@@ -25,7 +25,7 @@ const RSVPForm = () => {
 
   if (submitted) {
     return (
-      <p className="mt-8 text-xl text-[#C4ABD5]700 text-center">
+      <p className="mt-8 text-xl text-[#84456E] text-center">
         Thank you for RSVPing! We look forward to seeing you.
       </p>
     );
@@ -34,12 +34,12 @@ const RSVPForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full mx-auto mt-8 p-6 rounded-lg"
+      className="w-full mx-auto p-6 rounded-lg"
     >
-      <h1 className="text-3xl md:text-4xl font-bold font-heading mb-6">RSVP</h1>
+      <h1 className="text-[#84456E] text-3xl md:text-4xl font-bold font-heading mb-6">RSVP</h1>
       {/* Names Field */}
       <label className="block mb-4">
-        <span className="text-[#C4ABD5]700 font-semibold">Names:</span>
+        <span className="text-[#84456E] font-semibold">Names:</span>
         <input
           type="text"
           value={names}
@@ -51,7 +51,7 @@ const RSVPForm = () => {
 
       {/* Number of Guests Field */}
       <label className="block mb-4">
-        <span className="text-[#C4ABD5]700 font-semibold">Number of Guests:</span>
+        <span className="text-[#84456E] font-semibold">Number of Guests:</span>
         <input
           type="number"
           value={numGuests}
@@ -64,7 +64,7 @@ const RSVPForm = () => {
 
       {/* Notes Field */}
       <label className="block mb-4">
-        <span className="text-[#C4ABD5]700 font-semibold">Notes:</span>
+        <span className="text-[#84456E] font-semibold">Notes:</span>
         <textarea
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
@@ -75,7 +75,7 @@ const RSVPForm = () => {
 
       {/* Notes Field */}
       <label className="block mb-4">
-        <span className="text-[#C4ABD5]700 font-semibold">Email</span>
+        <span className="text-[#84456E] font-semibold">Email</span>
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -86,7 +86,7 @@ const RSVPForm = () => {
       {/* Submit Button */}
       <button
         type="submit"
-        className="w-full bg-[#FBE46C] text-[#9D67C3] font-bold py-2 px-4 rounded-md hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+        className="w-full bg-[#FBE46C] text-[#84456E] font-bold py-2 px-4 rounded-md hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500"
       >
         Submit
       </button>
