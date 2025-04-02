@@ -21,4 +21,22 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+    /* Add these background properties */
+  background-image: url('/mike-and-nicole.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Optional: prevents scrolling effects */
+  opacity: .95; /* Adjust as needed */
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3); /* Adjust tint as needed */
+  z-index: -1; /* Places behind content */
 }
