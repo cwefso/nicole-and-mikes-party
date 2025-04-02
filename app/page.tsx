@@ -14,7 +14,7 @@ export default function Home() {
     <div className="min-h-screen text-[#9D67C3] text-center font-body">
       <section className="flex justify-center items-center h-[100vh] relative">
         <div className="grid grid-cols-1 md:grid-cols-2 w-full md:max-w-[60vw] bg-white rounded-lg overflow-hidden h-[80vh] md:h-[80vh] overflow-y-auto md:overflow-y-visible z-10 mx-4 md:mx-0 animate-fadeIn">
-          <div className="flex justify-center items-center flex-col p-4 md:p-8 relative bg-[#C4ABD5]">
+          <div className="flex justify-center items-center flex-col p-4 md:p-8 relative bg-[#dbcce5]">
             <div className="relative text-[#84456E] p-6 md:p-0">
               <h1 className="text-3xl md:text-4xl font-bold font-heading">
                 {content.title}
