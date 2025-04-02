@@ -34,7 +34,7 @@ const RSVPForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full mx-auto p-6 rounded-lg"
+      className="w-full mx-auto p-6 rounded-lg font-body"
     >
       <h1 className="text-[#84456E] text-3xl md:text-4xl font-bold font-heading mb-6">RSVP</h1>
       {/* Names Field */}

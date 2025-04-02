@@ -16,6 +16,15 @@ export default {
         heading: ["Playfair Display", "serif"],
         body: ["Lora", "serif"],
       },
+      animation: {
+        fadeIn: "fadeIn 1.5s ease-in-out forwards",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "0.9" },
+        },
+      },
     },
   },
   plugins: [],

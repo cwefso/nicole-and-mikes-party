@@ -5,7 +5,7 @@ export const EventDetails = () => {
           <h2 className="text-xl md:text-2xl font-bold text-[#84456E] font-heading">
             Event Details
           </h2>
-          <p className="mt-2 md:mt-4 text-[#84456E] md:text-lg">
+          <p className="mt-2 md:mt-4 text-[#84456E] md:text-lg font-body">
             <strong>Date:</strong> Saturday, July 19th, 2025
             <br />
             <strong>Time:</strong> 6:00 PM - 12:00 AM
