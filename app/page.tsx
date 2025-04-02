@@ -17,10 +17,9 @@ export default function Home() {
         <Image
           src="/mike-and-nicole.jpg"
           alt="Footer Background"
-          className="w-full h-full object-cover opacity-70"
+          className="opacity-70"
           fill
           style={{ objectFit: "cover" }}
-          quality={75}
           priority
         />
 
