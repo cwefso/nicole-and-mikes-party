@@ -16,11 +16,15 @@ export default function Home() {
       <section className="flex justify-center items-center h-[100vh] relative">
         <Image
           src="/mike-and-nicole.jpg"
-          alt="Footer Background"
-          className="opacity-70"
+          alt="Background"
           fill
-          style={{ objectFit: "cover" }}
           priority
+          className="opacity-70"
+          style={{
+            objectFit: "cover",
+            objectPosition: "center",
+          }}
+          sizes="100vw" // Important for responsive behavior
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 w-full md:max-w-[60vw] bg-white rounded-lg overflow-hidden bg-opacity-90 h-[80vh] md:h-[80vh] overflow-y-auto md:overflow-y-visible z-10 mx-4 md:mx-0 animate-fadeIn">
