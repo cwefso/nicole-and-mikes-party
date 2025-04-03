@@ -3,12 +3,13 @@
 import React, { useState } from "react";
 import { supabase } from "../../supabaseClient";
 
-const RSVPForm = () => {
+const RSVPForm = ({setSubmitted}) => {
   const [names, setNames] = useState("");
   const [numGuests, setNumGuests] = useState(1);
   const [notes, setNotes] = useState("");
-  const [submitted, setSubmitted] = useState(false);
   const [email, setEmail] = useState("")
+
+  console.log("set", setSubmitted)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,18 +24,10 @@ const RSVPForm = () => {
     }
   };
 
-  if (submitted) {
-    return (
-      <p className="mt-8 text-xl text-[#84456E] text-center">
-        Thank you for RSVPing! We look forward to seeing you.
-      </p>
-    );
-  }
-
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full mx-auto p-6 rounded-lg font-body"
+      className="w-full mx-auto  rounded-lg font-body"
     >
       <h1 className="text-[#84456E] text-3xl md:text-4xl font-bold font-heading mb-6">RSVP</h1>
       {/* Names Field */}
