@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@emailjs/nodejs": "^5.0.2",
     "@supabase/supabase-js": "^2.49.1",
     "next": "15.1.7",
     "nodemailer": "^6.10.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "resend": "^4.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nicole and Mike's Party!",
+  title: "Nicole and Mike's Celebration!",
   description: "Celebrate at the Botanic Gardens",
   icons: {
     icon: "/flower.png",
