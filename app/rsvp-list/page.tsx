@@ -19,17 +19,33 @@ export default async function RsvpListPage() {
     0
   );
 
-  // Calculate attendance counts
+  // Calculate attendance counts WITH GUESTS
   const attendanceStats = {
-    partyOnly: rsvps.filter(
-      (rsvp) => rsvp.party && !rsvp.movie && !rsvp.declined
-    ).length,
-    movieOnly: rsvps.filter(
-      (rsvp) => rsvp.movie && !rsvp.party && !rsvp.declined
-    ).length,
-    both: rsvps.filter((rsvp) => rsvp.party && rsvp.movie && !rsvp.declined)
-      .length,
-    declined: rsvps.filter((rsvp) => rsvp.declined).length,
+    partyOnly: rsvps.reduce(
+      (sum, rsvp) =>
+        !rsvp.declined && rsvp.party && !rsvp.movie
+          ? sum + rsvp.num_guests
+          : sum,
+      0
+    ),
+    movieOnly: rsvps.reduce(
+      (sum, rsvp) =>
+        !rsvp.declined && rsvp.movie && !rsvp.party
+          ? sum + rsvp.num_guests
+          : sum,
+      0
+    ),
+    both: rsvps.reduce(
+      (sum, rsvp) =>
+        !rsvp.declined && rsvp.party && rsvp.movie
+          ? sum + rsvp.num_guests
+          : sum,
+      0
+    ),
+    declined: rsvps.reduce(
+      (sum, rsvp) => (rsvp.declined ? sum + rsvp.num_guests : sum),
+      0
+    ),
   };
 
   // Function to display attendance status
