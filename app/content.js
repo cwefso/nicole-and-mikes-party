@@ -11,7 +11,7 @@ export const content = {
     by June 19th, 2025, and please list any dietary or accommodation
     needs. We will send out updates with more info as we get closer
     to the day.`,
-    note: 'We kindly ask you leave anyone under the age of 15 at home for this event.',
+    note: 'We kindly ask you leave anyone under 15 at home. We can provide a sitter if need be, just let us know!',
     rsvpDeadline: "June 19th, 2025",
     contactEmail: "nicoleandmikesparty@gmail.com",
     secondEventDay: "July 20th: The Movie",
