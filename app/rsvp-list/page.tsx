@@ -130,7 +130,7 @@ export default async function RsvpListPage() {
                   {rsvp.declined ? "-" : rsvp.num_guests}
                 </td>
                 <td className="px-6 py-4">{rsvp.email}</td>
-                <td className="px-6 py-4 max-w-xs truncate">
+                <td className="px-6 py-4 max-w-xs whitespace-normal">
                   {rsvp.notes || "-"}
                 </td>
               </tr>
