@@ -6,7 +6,8 @@ export default async function RsvpListPage() {
   const { data: rsvps, error } = await supabase
     .from("rsvps")
     .select("*")
-    .order("created_at", { ascending: false });
+    .order("created_at", { ascending: false })
+    .range(0, 1000);
 
   if (error) {
     console.error("Error fetching RSVPs:", error);
@@ -62,7 +63,7 @@ export default async function RsvpListPage() {
   };
 
   return (
-    <div className="min-h-screen bg-purple-50 p-8">
+    <div className="min-h-screen  p-8">
       <h1 className="text-4xl font-bold text-[#9D67C3] mb-8">RSVP List</h1>
 
       {/* Attendance Summary */}
